@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.drawer-btn {
+  cursor: pointer;
+  position: fixed;
+  z-index: 1100;
+  border: none;
+  height: 8rem;
+  margin: 1rem 2rem;
+  background: transparent;
+}
+.drawer-btn .drawer-btn-bar {
+  display: block;
+  transition: all 0.4s;
+  margin: 1.1rem auto;
+  height: 2px;
+  width: 4rem;
+  border-radius: 5rem;
+  background: #000000;
+}
+
+.drawer-background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(51, 51, 51, 0.5);
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+.drawer-menu {
+  position: fixed;
+  z-index: 1010;
+  transition: all 0.4s;
+  transform: translate(-102%, 10rem);
+  background: #FFFFFF;
+  width: 60%;
+  height: calc(100% - 10rem);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.drawer-menu-wrap a {
+  display: block;
+  padding: 1rem;
+  color: #000000;
+  font-size: 2rem;
+}
+.drawer-menu-wrap a:hover {
+  background: #EEEEEE;
+}
+.drawer-menu-wrap a:active {
+  background: #CCCCCC;
+}
+
+/* アクティブ時 */
+.drawer.active .drawer-btn .drawer-btn-bar1 {
+  transform: translateY(1.2rem) rotate(45deg);
+}
+.drawer.active .drawer-btn .drawer-btn-bar2 {
+  opacity: 0;
+}
+.drawer.active .drawer-btn .drawer-btn-bar3 {
+  /* transform: rotate(-45deg); */
+  transform: translateY(-1.2rem) rotate(-45deg);
+}
+.drawer.active .drawer-menu {
+  transform: translate(0, 10rem);
+}
