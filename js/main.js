@@ -11,6 +11,13 @@ window.addEventListener('load', function(){
         switchMenu()
         switchDisplayBackground()
     });
+
+    /** ラジオ 押下 */
+    Array.from(document.getElementsByClassName("radio-arrangement")).forEach(
+        element => element.addEventListener("change", function() {
+            switchArrangement(element.value)
+        })
+    );
 })
 
 // バックグラウンド表示/非表示
@@ -39,6 +46,14 @@ function activate(id) {
 
 function deactivate(id) {
     document.getElementById(id).classList.remove("active")
+}
+
+// ラジオボタン
+function switchArrangement(value) {
+    var wrap = document.getElementById("content-wrap")
+    wrap.removeAttribute("class")
+    wrap.classList.add("content-wrap")
+    wrap.classList.add("arrangement-" + value)
 }
 
 

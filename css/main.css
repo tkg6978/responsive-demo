@@ -101,13 +101,6 @@ h2 {
 .label-arrangement > i {
   vertical-align: middle;
 }
-.btn-arrangement:hover {
-  background: #EEEEEE;
-}
-.radio-arrangement:checked + .label-arrangement {
-  color: #000000;
-}
-
 
 .content-wrap {
   overflow: hidden;
@@ -116,27 +109,36 @@ h2 {
   border-bottom: solid 1px #FFFFFF;
 }
 .content-item {
-  display: block;
-  width: 90%;
-  height: auto;
-  padding-bottom: 3rem;
-  margin: 0 auto;
-}
-.image {
   width: 100%;
   height: auto;
+  margin: 0 auto;
+
+  /* デフォルト */
+  /* display: block;
+  margin-bottom: 5rem; */
 }
-.image img {
+.content-item .image {
+  height: auto;
+
+  /* デフォルト */
+  /* margin: 0 auto;
+  width: 90%; */
+}
+.content-item .image img {
   width: 100%;
   height: auto;
   text-align: center;
 }
-.summary {
-  width: 100%;
+.content-item .summary {
   cursor: pointer;
-  /* position: relative; */
   display: flex;
   justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1rem;
+
+  /* デフォルト */
+  /* border-bottom: solid 1px #FFFFFF; */
 }
 /* .summary .summary-wrap {
   position: absolute;
@@ -163,11 +165,6 @@ h2 {
   font-size: 3rem;
 }
 
-.summary:hover {
-  background: #111133;
-}
-
-
 .footer {
   background: #AAAAAA;
   height: 20rem;
@@ -187,13 +184,72 @@ h2 {
 .link-item a {
   font-size: 4rem;
 }
-.link-item a:link, .link-item a:visited, .link-item a:hover, .link-item a:active {
-  color: #FFFFFF;
-}
 .copyright {
   text-align: center;
   padding: 0.5rem 0;
 }
 .copyright small {
   font-size: 2rem;
+}
+
+.btn-arrangement:hover {
+  background: #EEEEEE;
+}
+
+/* box1 */
+.content-wrap.arrangement-box1 .content-item {
+  display: block;
+  margin-bottom: 5rem;
+}
+.content-wrap.arrangement-box1 .content-item .image {
+  margin: 0 auto;
+  width: 90%;
+}
+.content-wrap.arrangement-box1 .content-item .summary {
+  border-bottom: solid 1px #FFFFFF;
+}
+
+/* box2 */
+.content-wrap.arrangement-box2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem 1rem;
+}
+.content-wrap.arrangement-box2 .content-item {
+  margin: 0;
+  width: calc(100% / 2 - 0.5rem);
+}
+.content-wrap.arrangement-box2 .content-item .summary {
+  display: none;
+}
+
+/* list */
+.content-wrap.arrangement-list .content-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: solid 1px #FFFFFF;
+}
+.content-wrap.arrangement-list .content-item .image {
+  margin: 0;
+  width: 30%;
+}
+.content-wrap.arrangement-list .content-item .summary {
+  width: 70%;
+}
+.content-wrap.arrangement-list .summary .summary-wrap {
+  padding-top: 2rem;
+}
+
+.radio-arrangement:checked + .label-arrangement {
+  color: #000000;
+}
+
+
+.summary:hover {
+  background: #111133;
+}
+
+.link-item a:link, .link-item a:visited, .link-item a:hover, .link-item a:active {
+  color: #FFFFFF;
 }
